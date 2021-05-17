@@ -1,2 +1,4 @@
 class User < ApplicationRecord
-end
+  has_many :attendances, foreign_key: 'participant_id'
+  has_many :events, through: :attendances
+  end
