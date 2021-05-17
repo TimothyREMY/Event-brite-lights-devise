@@ -5,6 +5,7 @@ ruby '2.7.1'
 gem 'faker'
 gem 'table_print'
 gem 'better_errors'
+gem 'dotenv-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record

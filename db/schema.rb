@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_161019) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.bigint "admin_id"
     t.datetime "start_date"
     t.integer "duration"
     t.string "title"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_161019) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_events_on_admin_id"
   end
 
   create_table "users", force: :cascade do |t|
