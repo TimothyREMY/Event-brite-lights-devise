@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+    <br>
+   
+      <h1 class="h3 mb-3 font-weight-normal text-center">Page d'accueil</h1><br>
+      <ul>
+        <% if user_signed_in? %>
+          <li>
+            Voici ton email : <%= current_user.email %>
+          </li>
+          
+          <li>
+          <div class="actions mt-5">
+          <%= button_to "Sign out", destroy_user_session_path, class: "btn btn-lg btn-primary btn-block", method: :delete %>
+          </div> 
+          </li>
+
+          <li>
+          <div class="actions mt-5">
+          <%= button_to "Secret page", static_pages_secret_path, class: "btn btn-lg btn-primary btn-block", method: :get %>
+          </div> 
+          </li>
+
+          <li>
+          <div class="actions mt-5">
+          <%= button_to "Edit email / password", edit_user_registration_path, class: "btn btn-lg btn-primary btn-block", method: :get %>
+          </div> 
+          </li>
+
+        <% else %>
+        
+          <li>   
+          <div class="actions mt-5">
+          <%= button_to "Sign in", new_user_session_path, class: "btn btn-lg btn-primary btn-block" %>
+          </div> 
+            
+          </li>
+
+          <li>
+          <div class="actions mt-5">
+          <%= button_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary btn-block", method: :get %>
+          </div>
+            
+          </li>
+
+        <% end %>
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>

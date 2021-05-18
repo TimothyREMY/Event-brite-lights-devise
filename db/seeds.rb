@@ -12,14 +12,11 @@ User.delete_all
 Event.delete_all
 Attendance.delete_all
 
-users = []
-events = []
-attendances = []
 
 
 
 10.times do |x|
-  user = User.create(first_name: Faker::TvShows::NewGirl.character,last_name: Faker::TvShows::GameOfThrones.house, email: "anonymous@yopmail.com")
+  user = User.create(first_name: Faker::TvShows::NewGirl.character,last_name: Faker::TvShows::GameOfThrones.house, email: "anonymous#{x}@yopmail.com", password: 'azerty')
   puts "Seeding of User nb #{x}"
 end
 
@@ -38,6 +35,6 @@ t2 = Time.parse("2023-01-01 00:00:00")
 end
 
 20.times do |x|
-  Attendance.create(user: User.all.sample, event: Event.all.sample)
+  attendance = Attendance.create(user: User.all.sample, event: Event.all.sample)
   puts "Seeding of Guest nb #{x}"
 end

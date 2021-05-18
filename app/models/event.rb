@@ -21,7 +21,7 @@ class Event < ApplicationRecord
   validates :start_date, :duration, :title, :description, :price, :location, presence: true
   validates :title, length: { in: 5..140}
   validates :description, length: { in: 20..1000}
-  validates :price, presence: true, numericality: { only_integer: true, in: 1..1000 }
+  validates :price, presence: true, numericality: {greater_than: 1, less_than: 1000}
   
 
 end
